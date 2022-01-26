@@ -1,12 +1,12 @@
 import firebase from "firebase";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCk3Jep7m0nWBF5-iAuCmXFgX9Lgx6LBPE",
-  authDomain: "discord-clone-768d4.firebaseapp.com",
-  projectId: "discord-clone-768d4",
-  storageBucket: "discord-clone-768d4.appspot.com",
-  messagingSenderId: "89139412998",
-  appId: "1:89139412998:web:243eb102fe14c096a1c387",
+  apiKey: "AIzaSyDsC_vy7XHGvXCrwWgpzYoHcd-gPduGU1A",
+  authDomain: "twit-social.firebaseapp.com",
+  projectId: "twit-social",
+  storageBucket: "twit-social.appspot.com",
+  messagingSenderId: "511804668932",
+  appId: "1:511804668932:web:02f4f1cc259dd08dbc0951"
 };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
