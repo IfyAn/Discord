@@ -6,6 +6,7 @@ import {
   InboxIcon,
   QuestionMarkCircleIcon,
   PlusCircleIcon,
+  ArrowRightIcon,
   GiftIcon,
   EmojiHappyIcon,
 } from "@heroicons/react/solid";
@@ -17,6 +18,7 @@ import firebase from "firebase";
 import {  useRef } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollection } from "react-firebase-hooks/firestore";
+import { Link } from 'react-router-dom'
 
 function Chat() {
   const channelId = useSelector(selectChannelId);
@@ -66,7 +68,9 @@ function Chat() {
         </div>
         <div className="flex space-x-3">
           <BellIcon className="icon" />
-          <ChatIcon className="icon" />
+          <Link to='/ContactUs'>
+            <ChatIcon className="icon" />
+          </Link>
           <UsersIcon className="icon" />
           <div className="flex bg-[#202225] text-xs p-1 rounded-md">
             <input
@@ -100,7 +104,7 @@ function Chat() {
       </main>
       <div className="flex items-center p-2.5 bg-[#40444b] mx-5 mb-7 rounded-lg">
         <PlusCircleIcon className="icon mr-4" />
-        <form className="flex-grow">
+        <form className="flex-grow flex  ">
           <input
             type="text"
             disabled={!channelId}
@@ -110,8 +114,8 @@ function Chat() {
             className="bg-transparent focus:outline-none text-[#dcddde] w-full placeholder-[#72767d] text-sm"
             ref={inputRef}
           />
-          <button hidden type="submit" onClick={sendMessage}>
-            Send
+          <button hidden className="flex items-center bg-[#40444b]" type="submit" onClick={sendMessage}>
+            <ArrowRightIcon />
           </button>
         </form>
         <GiftIcon className="icon mr-2" />

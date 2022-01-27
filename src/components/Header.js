@@ -17,19 +17,16 @@ function Header() {
   };
 
   return (
-    <header className="bg-discord_blue flex items-center justify-between py-4 px-6">
+    <header className="bg-[#D0CED1] flex items-center justify-between py-4 px-6">
       <a href="/">
         <img
-          src="https://rb.gy/it5msp"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSNNznn1EEa7akMgwT4xMv-eQbh-AyhOHxAQ&usqp=CAU"
           className="w-32 h-12 object-contain"
           alt=""
         />
       </a>
       <div className="hidden lg:flex  space-x-6 ">
-        <a className="link">Download</a>
-        <a className="link">Why Discord?</a>
-        <a className="link">Nitro</a>
-        <a className="link">Safety</a>
+        <a className="link">Why Oh-Yeah?</a>
         <a className="link">Support</a>
       </div>
       <div className="flex space-x-4">
@@ -37,7 +34,7 @@ function Header() {
           className="bg-white p-2 rounded-full text-xs md:text-sm px-4 focus:outline-none hover:shadow-2xl hover:text-discord_blurple transition duration-200 ease-in-out whitespace-nowrap font-medium"
           onClick={!user ? signIn : () => history.push("/channels")}
         >
-          {!user ? "Login" : "Open Discord"}
+          {!user ? "Login" : "Open Oh-Yeah"}
         </button>
         <MenuIcon className="h-9 text-white cursor-pointer lg:hidden" />
       </div>
