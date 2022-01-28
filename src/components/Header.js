@@ -1,7 +1,8 @@
-import { MenuIcon } from "@heroicons/react/outline";
+import { MenuIcon, ChatIcon } from "@heroicons/react/outline";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useHistory } from "react-router-dom";
 import { auth, provider } from "../firebase";
+import { Link } from 'react-router-dom'
 
 function Header() {
   const [user] = useAuthState(auth);
@@ -26,8 +27,9 @@ function Header() {
         />
       </a>
       <div className="hidden lg:flex  space-x-6 ">
-        <a className="link">Why Oh-Yeah?</a>
-        <a className="link">Support</a>
+        <Link to='/ContactUs'>
+            <h2 className="text-white bold font-bold font-18">Contact Oh-Yeah</h2>
+          </Link>
       </div>
       <div className="flex space-x-4">
         <button

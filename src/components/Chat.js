@@ -7,8 +7,6 @@ import {
   QuestionMarkCircleIcon,
   PlusCircleIcon,
   ArrowRightIcon,
-  GiftIcon,
-  EmojiHappyIcon,
 } from "@heroicons/react/solid";
 import { useSelector } from "react-redux";
 import { selectChannelId, selectChannelName } from "../features/channelSlice";
@@ -67,24 +65,12 @@ function Chat() {
           <h4 className="text-white font-semibold">{channelName}</h4>
         </div>
         <div className="flex space-x-3">
-          <BellIcon className="icon" />
-          <Link to='/ContactUs'>
+          <Link to='/DirectMessage'>
             <ChatIcon className="icon" />
           </Link>
-          <UsersIcon className="icon" />
-          <div className="flex bg-[#202225] text-xs p-1 rounded-md">
-            <input
-              type="text"
-              placeholder="Search"
-              className="bg-[#202225] focus:outline-none text-white pl-1 placeholder-[#72767d]"
-            />
-            <SearchIcon className="h-4 text-[#72767d] mr-1" />
-          </div>
-          <InboxIcon className="icon" />
-          <QuestionMarkCircleIcon className="icon" />
         </div>
       </header>
-      <main className="flex-grow overflow-y-scroll scrollbar-hide">
+      <main className="flex-grow overflow-y-scroll scrollbar-hide ">
         {messages?.docs.map((doc) => {
           const { message, timestamp, name, photoURL, email } = doc.data();
 
@@ -114,12 +100,10 @@ function Chat() {
             className="bg-transparent focus:outline-none text-[#dcddde] w-full placeholder-[#72767d] text-sm"
             ref={inputRef}
           />
-          <button hidden className="flex items-center bg-[#40444b]" type="submit" onClick={sendMessage}>
-            <ArrowRightIcon />
+          <button hidden className="flex items-center hover:bg-[#dcddde] rounded"  type="submit" onClick={sendMessage}>
+              Send
           </button>
         </form>
-        <GiftIcon className="icon mr-2" />
-        <EmojiHappyIcon className="icon" />
       </div>
     </div>
   );

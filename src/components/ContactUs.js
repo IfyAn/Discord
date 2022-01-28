@@ -1,51 +1,86 @@
-import emailjs from '@emailjs/browser';
-import { ArrowLeftIcon } from '@heroicons/react/outline';
-import React from 'react';
+import React from "react";
+import FacebookIcon from '@material-ui/icons/Facebook';
+import GithubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import { Link } from 'react-router-dom';
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../firebase";
+import { ArrowLeftIcon } from '@heroicons/react/outline';
 
-export default function ContactUs() {
-    const [user] = useAuthState(auth);
-    function sendEmail(e) {
-        e.preventDefault();
-
-    emailjs.sendForm('gmail', 'Oh-Yeah', e.target, 'user_vKGaEk63KqAfDYna5OI1P')
-        .then((result) => {
-            console.log(result.text);
-        }, (error) => {
-            console.log(error.text);
-        });
-        e.target.reset()
-    }
-
+function ContactUs(){
     return(
-        <div className="flex justify-center items-center bg-[#9226F3] h-screen">
-            <div className="ml-10 mb-10">
-                    <Link to='/channels'>
+        <div class="min-h-screen flex items-center justify-center px-4 bg-[#9226F3]">
+              <div className="mb-10 mr-10">
+                    <Link to='/'>
                         <ArrowLeftIcon className="icon" />
                     </Link>
                 </div>
-            <div class="m-5 max-w-xl">
-                <h1 className="block text-white text-xl font-bold mb-10"> Send Direct Message To Oh-Yeah Team</h1>
-                <form onSubmit={sendEmail} class="bg-white shadow-md hover rounded px-8 pt-6 pb-8 mb-4">
-                        <div class="mb-4">
-                            <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder={user?.displayName} name={user?.displayName}/>
+            <div class="max-w-4xl  bg-white w-full rounded-lg shadow-xl">
+                <div class="p-4 border-b hover">
+                    <h2 class="text-2xl ">
+                        Contact Us
+                    </h2>
+                </div>
+                <div>
+                    <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+                        <p class="text-gray-600">
+                            Full name
+                        </p>
+                        <p>
+                            Oh-Yeah Team
+                        </p>
+                    </div>
+                    <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+                        <p class="text-gray-600">
+                            Email Address
+                        </p>
+                        <p>
+                            Chukwuanyan@gmail.com
+                        </p>
+                    </div>
+                    <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+                        <p class="text-gray-600">
+                            Phone Number
+                        </p>
+                        <p>
+                            09069094011
+                        </p>
+                    </div>
+                    <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+                        <p class="text-gray-600">
+                            Specialize
+                        </p>
+                        <p>
+                            Web & Mobile App Development
+                        </p>
+                    </div>
+                    <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+                        <p class="text-gray-600">
+                            About Me
+                        </p>
+                        <p>
+                        I am a Programmer (Javascript Full-Stack developer).  Web(React) & Mobile App(React Native).
+                    I want to be involved in building multiple successful products that aims at making the world a better place, while I keep growing my technical and soft skills as a software developer. 
+                        </p>
+                    </div>
+                    <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4">
+                        <p class="text-gray-600">
+                            Socil Medial
+                        </p>
+                        <div class="space-y-2 border: 2px solid var(--border-color) flex items-center justify-between border-radius: 50% transition: all .4s ease-in-out;">
+                        <a href="https://web.facebook.com/?_rdc=1&_rdr" className="#004dcf">
+                            <FacebookIcon />
+                        </a>
+                        <a href="https://github.com/IfyAn?tab=repositories" className=" color: #5F4687">
+                            <GithubIcon />
+                        </a>
+                        <a href="https://www.linkedin.com/in/anyam-ifeanyi-455189193/" >
+                            <LinkedInIcon className="color: #004dcf"/>
+                        </a>
                         </div>
-                        <div class="mb-4">
-                            <input type="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder={user?.email} name={user?.email}/>
-                        </div>
-                        <div className="col-8 form-group pt-2 mx-auto">
-                            <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Subject" name="subject"/>
-                        </div>
-                        <div className="col-8 mt-4 pt-2 mx-auto border rounded">
-                            <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  id="" cols="30" rows="8" placeholder="Your message" name="message"></textarea>
-                        </div>
-                        <div className="col-8 pt-3 mx-auto">
-                            <input type="submit" className="btn btn-info" onSubmit={sendEmail} value="Send Message"></input>
-                        </div>
-                    </form>
+                    </div>
+                </div>
             </div>
         </div>
     )
 }
+
+export default ContactUs;

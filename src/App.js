@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Hero from "./components/Hero";
 import Header from "./components/Header";
 import Home from "./components/Home";
+import DirectMessage from "./components/DirectMessage";
 import ContactUs from "./components/ContactUs";
 
 function App() {
@@ -17,6 +18,9 @@ function App() {
         </Route>
         <Route exact path="/channels/:id">
           <Home />
+        </Route>
+        <Route exact path="/DirectMessage">
+          <DirectMessage />
         </Route>
         <Route exact path="/ContactUs">
           <ContactUs />
